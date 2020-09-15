@@ -10,3 +10,12 @@ Adding more Virtual Users (VU)
 ```
 k6 run --vus 10 --duration 30s k6/postDataToCloudHubFromFile.js 
 ```
+
+```
+Adding credentials
+k6 login cloud -t #########(token)
+```
+
+```
+Exporting report to cloud
+k6 run --vus 10 --duration 30s postDataToCloudHubFromFile.js --out cloud 

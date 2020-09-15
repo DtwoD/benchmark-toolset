@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { sleep } from 'k6';
 
-let ediX12File = open('input-files/Large-EDI-219-10000.edi');
+let ediX12File = open('input-files/IB_322_RailStatus-100000.edi');
 
 export default function () {
     var data = {
