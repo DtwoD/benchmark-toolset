@@ -1,23 +1,13 @@
 ### Dev Benchmark Toolset
 
-### Performance Tunning
-
-##### Mule4 Execution Engine
-Mule4 new execution with non-blocking runtime. Avoid performance problems due to incorrect processing strategy. Based on reactive programing.
-
-Mule Event processors indicate to the runtime whether they are CPU intensive, CPU light and IO intensive operations.
-
-The default class-loading mechanism of the JVM makes it possible to have conflicting versions of the same JAR files.
+#### Performance Tunning
 
 Test payload and transaction rate on multiple runtime configurations to determine the best fit:
 
-Config1: [6x 0.1vCores]
-
-Config2: [4x 0.2vCores]
-
-Config3: [2x 1cCores]
-
-Config4: [1x 2vCores]
+```
+Config1: [6x 0.1vCores] | Config2: [4x 0.2vCores] 
+Config3: [2x 1cCores] | Config4: [1x 2vCores]
+```
 
 Characteristics of CloudHub: 
 - Application Isolation
@@ -47,18 +37,18 @@ Different tools for troubleshoot typical issues:
 - Connection issues
 - Token expiration issues
 
-### Typical Issues: CPU
+#### Typical Issues: CPU
 
 Make sure CPU is the real reason.
 - A failing backend system can cause the Application to loop(retries)
 - Lack of memory can cause the CPU to race
 
-##### Troubleshoot
+#### Troubleshoot
 1- For on-premise runtimes, look for the top CPU consuming threads
 2- For CloudHub
     a: Sizing can be an issue since the CPU burst credits expire for 0.1 and 0.2 vcores. 
 
-### Typical Issues: Memory
+#### Typical Issues: Memory
 
 - Batch job tested with small payloads during dev is now tested with realistic payloads
 - Custom code contains a Memory Leak
@@ -69,7 +59,7 @@ Make sure CPU is the real reason.
 ##### Troubleshoot
 USe the Support information collector KB to collect the Heap Dumps and the the runtimes
 
-### Typical Issues: Disk
+#### Typical Issues: Disk
 - Default Batch Expiration
     - <batch:expiration max-age="7" age-unit="DAYS">
 - Temp Files
@@ -84,20 +74,43 @@ Large payload/High TPS (Transaction Per Second)
 
 ### Performance Tunning Process
 
-1[TEST] <- JMeter, k6, LoadRunner, SoapUI
+```
+1[TEST] <- JMeter, k6, ApacheBenchmark, LoadRunner, SoapUI
 .
 .
 2[MONITOR] <- Top, VisualVM
-.   ==============> [PROFILE] <- Heap Dumps, Profiler
+.           ===> [PROFILE] <- Heap Dumps, Profiler
 .                    .
 .                    .
-.                   [TUNE / PATCH]
-3[MEASURE]
+.                   [TUNE / PATCH] ---> B2B team :-)
+.                    .
+.                    .
+3[MEASURE]............
 .
 .
 4[TUNE]
+```
+
+### Useful commands
+Get the PID of your Mule runtime
+```
+jps 
+MuleContainerBoostrap ---> PID
+
+Altenative: ps
+```
+
+##### Mule4 Execution Engine
+Mule4 new execution with non-blocking runtime. Avoid performance problems due to incorrect processing strategy. Based on reactive programing.
+
+Mule Event processors indicate to the runtime whether they are CPU intensive, CPU light and IO intensive operations.
+
+The default class-loading mechanism of the JVM makes it possible to have conflicting versions of the same JAR files.
+
 
 ### Resources
-Muley
-(Mulesoft Performance Profiling)[https://www.youtube.com/watch?v=Nw-9dT6toDQ&ab_channel=VirtualMuleys]
-(Advanced Troubleshooting)[https://www.youtube.com/watch?v=HDWuDV1zaMU&ab_channel=VirtualMuleys]
+[Mulesoft Performance Profiling](https://www.youtube.com/watch?v=Nw-9dT6toDQ&ab_channel=VirtualMuleys)
+
+[Advanced Troubleshooting](https://www.youtube.com/watch?v=HDWuDV1zaMU&ab_channel=VirtualMuleys)
+
+[Getting as much information from Mule server](https://help.mulesoft.com/s/article/How-to-obtain-as-much-information-as-possible-from-unresponsive-Mule-server) 
