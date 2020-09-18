@@ -5,3 +5,4 @@ k6/input-files/*
 x12-210-generator/outputs/*
 /node_modules
 /json-xml-generator/outputs
+jmeter.log
