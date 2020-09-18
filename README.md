@@ -9,12 +9,14 @@ Mule Event processors indicate to the runtime whether they are CPU intensive, CP
 
 The default class-loading mechanism of the JVM makes it possible to have conflicting versions of the same JAR files.
 
- 
 Test payload and transaction rate on multiple runtime configurations to determine the best fit:
 
 Config1: [6x 0.1vCores]
+
 Config2: [4x 0.2vCores]
+
 Config3: [2x 1cCores]
+
 Config4: [1x 2vCores]
 
 Characteristics of CloudHub: 
