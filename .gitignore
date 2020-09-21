@@ -3,3 +3,6 @@ k6/input-files/*
 .DS_Store
 ../.DS_Store
 x12-210-generator/outputs/*
+/node_modules
+/json-xml-generator/outputs
+jmeter.log
