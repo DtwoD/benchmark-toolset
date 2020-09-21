@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { sleep,check } from 'k6';
 
-let ediX12File = open('input-files/X12-8.16 MB.edi');
+let ediX12File = open('input-files/X12-2.04 MB.edi');
 
 export default function () {
 
