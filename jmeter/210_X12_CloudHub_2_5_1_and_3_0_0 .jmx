@@ -119,30 +119,28 @@ IEA*1*000003507</stringProp>
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">ISA*00*          *00*          *ZZ*MELERA         *ZZ*MULE           *190626*1830*U*00400*000003507*1*P*&gt;&#xd;
-GS*IM*MELERA*MULE*20190626*1830*3507*X*004010&#xd;
-ST*210*0001&#xd;
-B3**12121231*ABC3241659*PP**20190619*6275****CARB&#xd;
-C3*USD&#xd;
-G62*86*20190619&#xd;
-N1*SH*CROW STAMPING&#xd;
-N3*23331 CITY RD 3&#xd;
-N4*REALTOWN*CA*56465&#xd;
-N1*CN*AMERICAN MFG COMPANY&#xd;
-N3*777 6TH AVE&#xd;
-N4*SAN JOSE*CA*94008&#xd;
-LX*1&#xd;
-L5**KITCHEN TRASH&#xd;
-L0**694*LB*694*G******L&#xd;
-L1*1*72*CW*5000&#xd;
-L7*1******50&#xd;
-LX*2&#xd;
-L5**FUE&#xd;
-L1*2*0.255*FR*2125&#xd;
-L3*194*N&#xd;
-SE*20*0001&#xd;
-GE*1*3507&#xd;
-IEA*1*000003507</stringProp>
+                <stringProp name="Argument.value">ISA*00*          *00*          *02*BNSF           *02*PROVLOCS       *191003*0929*U*00401*000911244*0*P*&gt;~&#xd;
+GS*SO*BNSF*PROVLOCS*20191003*0929*911244*X*004010~&#xd;
+ST*322*110000001~&#xd;
+Q5*P*20191003*0818*MT**ROWINLS*AZ~&#xd;
+N7*CRR1*151825*35800*G*******CN*SNCY***5300*******U287~&#xd;
+DTM*017*20191005*2311*LT~&#xd;
+DTM*069*20191006*1600*LT~&#xd;
+M7*0730009~&#xd;
+W2*CRR1*150005**CN*L~&#xd;
+NA***DTTX*600005*F~&#xd;
+R4*5*SL*700064*ROWINLS****RW~&#xd;
+R4*6*SL*870040*BUENOSAI****BA~&#xd;
+R4*7*SL*380000*AVELLAN****AV~&#xd;
+N1*SH*ABC PROVLOCS~&#xd;
+N1*CN*ABC PROVLOCS~&#xd;
+N9*WY*517122~&#xd;
+N9*TN*QTTOBUE602~&#xd;
+N9*RE*636009~&#xd;
+N9*BM*SI006630000~&#xd;
+SE*18*110000001~&#xd;
+GE*1*911244~&#xd;
+IEA*1*000911244~</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
